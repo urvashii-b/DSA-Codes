@@ -1,1 +1,1 @@
-A sorted array? true
+The GCD of the two numbers is 6
