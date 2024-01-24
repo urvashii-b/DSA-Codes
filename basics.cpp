@@ -1,15 +1,17 @@
-#include<iostream> //input-ouput
-#include<bits/stdc++.h>
-using namespace std;
+// This file contains the basics of C++ programming language
+
+#include<iostream> //input output stream
+#include<bits/stdc++.h> // all header files
+using namespace std; // standard namespace
 
 int main(){
-
+    // cout: console output, cin: console input
+    // competitive programming type input/output
     #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
-        freopen("output.txt", "w", stdout);
+        freopen("input.txt", "r", stdin); 
+        freopen("output.txt", "w", stdout); 
     #endif
 
-    /*
     // 1. INPUT/OUPUT
     cout<<"Hey Urvashi"<<"\n";
     cout<<"this is on a new line"<<endl;
@@ -23,15 +25,15 @@ int main(){
     // int: (-10^9) - 10^9, long: (-10^12) - 10^12, long long: (-10^18) - 10^18
     // float, double
     double a = 0.5;
-    cout<<a;
+    cout<<a<<"\n";
     //string and getline
     string s;
     getline(cin,s); // for one whole line
-    cout<<s;
+    cout<<s<<"\n";
     // char - one alphabet
     char ch;
     cin>>ch;
-    cout<<ch;
+    cout<<ch<<"\n";
     // use " " for string and ' ' for char
 
     // 3. IF-ELSE
@@ -47,6 +49,7 @@ int main(){
         cout<<"invalid age";
     }
    
+    cout<<"\n";
     int marks;
     cin>>marks;
     if(marks<25){
@@ -67,6 +70,7 @@ int main(){
     else{
         cout<<"A";
     }
+    cout<<"\n";
 
     // 4. SWITCH
     int day;
@@ -96,15 +100,16 @@ int main(){
         default:
             cout<<"Enter the right day!!";
     }
-    
+    cout<<"\n";
+
     // 5. ARRAYS - similar data together
     int arr[3][5]; //3 5boxes: i->row, j->col
     
     // 6. STRINGS - stores at index
-    string s = "Urvashh";
-    int len = s.size();
-    s[len-1] = 'i';
-    cout<<s;
+    string s2 = "Urvashh";
+    int len = s2.size();
+    s2[len-1] = 'i';
+    cout<<s2<<endl;
     // a string is made up of chracters
     
     // 7. FOR LOOP
@@ -118,7 +123,7 @@ int main(){
         cout<<"Hii"<<" "<<i<<endl;
         i=i+1;
     }
-    */
+
     // 9. FUNCTIONS - reusable pieces of code
     // can be parameterised-> void print(int n) or non-parameterised-> void print()
     // pass by reference(original value is changed) or by value(copy->original remains same before function)
