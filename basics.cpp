@@ -1,8 +1,25 @@
 // This file contains the basics of C++ programming language
 
 #include<iostream> //input output stream
+#include<string> 
+#include<math.h> 
 #include<bits/stdc++.h> // all header files
 using namespace std; // standard namespace
+
+int sum(int a, int b){
+    int c = a+b;
+    return c;
+}
+
+void changeName(string s){ //pass by value
+    s[0]='N';
+    cout<<s<<'\n';
+}
+
+void changeName2(string &s){ //pass by reference - changes original
+    s[0]='N';
+    cout<<s<<'\n';
+}
 
 int main(){
     // cout: console output, cin: console input
@@ -99,6 +116,7 @@ int main(){
             break;
         default:
             cout<<"Enter the right day!!";
+            break;
     }
     cout<<"\n";
 
@@ -124,8 +142,16 @@ int main(){
         i=i+1;
     }
 
+    int num1, num2;
+    cin>>num1>>num2;
+    int res = sum(num1, num2);
+    cout<<res<<endl;
+
     // 9. FUNCTIONS - reusable pieces of code
     // can be parameterised-> void print(int n) or non-parameterised-> void print()
     // pass by reference(original value is changed) or by value(copy->original remains same before function)
+    string s1 = "Urvashi";
+    changeName(s1);
+    cout<<s1<<endl;
     return 0;
 }

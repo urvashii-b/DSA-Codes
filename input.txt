@@ -1,5 +1,2 @@
-6 12hey this is me!!
-C
-50
-87
-3
+10 20Hiii Urvashi 
+N 14 67 5 46 78
