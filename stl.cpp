@@ -1,4 +1,8 @@
+// C++ STL: Algorithms, Containers, Functions, Iterators
 #include <bits/stdc++.h>
+#include<math.h>
+#include<string.h>
+
 using namespace std;
 
 void print()
@@ -24,7 +28,7 @@ void explainPair()
     cout << arr[1].second;
 }
 
-// 2. VECTORS
+// 2. VECTORS - can be modified unlike arrays (dynamic arrays basically)
 void explainVector()
 {
     vector<int> v;
@@ -114,7 +118,7 @@ void explainVector()
     }
 }
 
-// 3. LISTS
+// 3. LISTS - similar to vectors but can push front too
 void explainList()
 {
     list<int> ls;
@@ -122,9 +126,10 @@ void explainList()
     ls.emplace_back(1); //{2,1}
 
     ls.push_front(0); //{0,2,1}
+    ls.emplace_front(3); //{3,0,2,1}
 }
 
-// 4. DEQUE
+// 4. DEQUE - double ended queue
 void explainDeque()
 {
     deque<int> dq;
@@ -179,9 +184,10 @@ void explainQueue()
 
 // 7. PRIORITY QUEUE - largest ele has max priority OR the lexicographically largest string
 // tree is maintained (not a linear data structure)
+// push,pop - O(log(n)), top - O(1)
 void explainPQ()
 {
-    // push,pop - O(log(n)), top - O(1)
+    // max heap
     priority_queue<int> pq;
     pq.push(1);     //{1}
     pq.push(11);    //{11,1}
@@ -219,6 +225,8 @@ void explainSet()
     s.erase(it); // takes constant time
     int cnt = s.count(3);
     cout << cnt;
+
+
 }
 
 // 9. MULTISET - sorted but not unique(stores multiple occurences)
@@ -239,7 +247,7 @@ void explainMultiSet()
     cout << cnt2 << endl;
 }
 
-// 10. UNORDERED SET - not sorted(random order) + unique
+// 10. UNORDERED SET - not sorted(any random order) + unique
 void explainUSet()
 {
     unordered_set<int> st;
@@ -256,6 +264,7 @@ void explainMap()
 
     mp[1] = 2;
     mp.insert({3, 1});
+    mp.emplace(2,4);
 
     mp2[{2, 3}] = 5;
 
@@ -269,12 +278,12 @@ void explainMap()
     cout << mp[1] << endl; // stores 2 at key 1
 }
 
-// 12. MULTIMAP - duplicate keys
+// 12. MULTIMAP - duplicate keys in sorted order
 void explainMultiMap()
 {
 }
 
-// 13. UNORDERED MAP - NOT SORTED
+// 13. UNORDERED MAP - NOT SORTED and unique
 void explainUnorderedMap()
 {
     // mostly all func:O(1) but sometimes might go to O(n)
@@ -309,7 +318,7 @@ void explainExtra()
 
     int num = 7;
     int cnt = __builtin_popcount(num);
-    cout << cnt << endl; // prints the numbers of 1 present, ex: 7 - 111
+    cout << cnt << endl; // prints the numbers of 1 present, ex: 7 - 111 so prints 3
 
     long long num2 = 165786578687;
     int cnt2 = __builtin_popcountll(num2);
@@ -358,7 +367,40 @@ int main()
     explainMultiSet();
 
     explainMap();
-    */
+    
     explainExtra();
+
+    int arr[] = {1, 4, 5, 8, 9};
+    int n = sizeof(arr) / sizeof(arr[0]);
+    bool res = binary_search(arr, arr + n, 5); // prints 1 as it exists
+    cout <<"Array contains 5: YES(1) OR NO(0)-> " <<res;
+
+    int ind = lower_bound(arr, arr + n, 5) - arr; // prints 2 (index of first occurence of 5)
+    int ind1 = lower_bound(arr, arr + n, 10) - arr; // prints 5 (index of first occurence of 10 but no occurence here so after last element)
+
+    int ind2 = upper_bound(arr, arr + n, 5) - arr; // prints 3 ((index of first occurence of 5)+1)
+    
+    // Q.1) find first occurence of X in a sorted array(lower_bound). If it doesn't occur, print -1
+    int arr[]={1,4,4,4,4,9,9,10,11};
+    cout<<"Enter the number to be searched: "<<endl;
+    int X;
+    cin>>X;
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int ind = lower_bound(arr,arr+n,X)-arr;
+    if(ind!=n && arr[ind]==X) cout<<ind;
+    else cout<<"-1";
+    
+    // Q.2) find last occurence of X in a sorted array(upper_bound). If it doesn't occur, print -1
+    int arr[]={1,4,4,4,4,9,9,10,11};
+    cout<<"Enter the number to be searched: "<<endl;
+    int X;
+    cin>>X;
+    int n = sizeof(arr)/sizeof(arr[0]);
+    int ind = upper_bound(arr,arr+n,X)-arr;
+    ind--;
+    if(ind>=0 && arr[ind]==X) cout<<ind;
+    else cout<<"-1";
+    */
+    // Q.3) 
     return 0;
 }

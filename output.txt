@@ -1,4 +1,2 @@
-* * * * 
-* * * * 
-* * * * 
-* * * * 
+Enter the number to be searched: 
+-1
