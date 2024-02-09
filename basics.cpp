@@ -16,7 +16,7 @@ void changeName(string s){ //pass by value
     cout<<s<<'\n';
 }
 
-void changeName2(string &s){ //pass by reference - changes original
+void changeNameReally(string &s){ //pass by reference - changes original
     s[0]='N';
     cout<<s<<'\n';
 }
@@ -66,6 +66,7 @@ int main(){
         cout<<"invalid age";
     }
    
+    // grades of students according to marks
     cout<<"\n";
     int marks;
     cin>>marks;
@@ -150,6 +151,7 @@ int main(){
     // 9. FUNCTIONS - reusable pieces of code
     // can be parameterised-> void print(int n) or non-parameterised-> void print()
     // pass by reference(original value is changed) or by value(copy->original remains same before function)
+    
     string s1 = "Urvashi";
     changeName(s1);
     cout<<s1<<endl;
