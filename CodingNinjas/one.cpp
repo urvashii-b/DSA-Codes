@@ -253,7 +253,57 @@ vector<int> generateFibonacciNumbers(int n) {
     }
     return ans;
 }
+
+// 20. Count frequency of elements using hashing
+vector<int> countFrequency(int n, int x, vector<int> &nums){
+    vector<int> ans(x,0);
+    for(int i=0;i<n;i++){
+        ans[nums[i]-1]++;
+    }
+    ans.resize(n);
+    return ans;
+}
+
+// 
+vector<int> getFrequencies(vector<int>& v) {
+    int m = v.size();
+    unordered_map<int,int> freq;
+    for(int i=0;i<m;i++){
+        freq[v[i]]++;
+    }
+
+    int maxEle, maxFreq = 0;
+    int minEle = (int)1e9 + 1;
+    int minFreq = m;
+    for(auto it: freq){
+        int ele = it.first;
+        int cnt = it.second;
+
+        if(cnt > maxFreq){
+            maxFreq = cnt;
+            maxEle = ele;
+        }
+        else if(cnt == maxFreq){
+            maxEle = min(maxEle,ele);
+        }
+        if(cnt < minFreq){
+            minFreq = cnt;
+            minEle = ele;
+        }
+        else if(cnt == minFreq){
+            minEle = min(ele,minEle);
+        }
+    }
+    vector<int> ans = {maxEle, minEle};
+    return ans;
+}
+
 int main() {
+    #ifndef ONLINE_JUDGE
+        freopen("input.txt", "r", stdin);
+        freopen("output.txt", "w", stdout);
+    #endif
+    /*
 	char ch;
 	cin>>ch;
 	if(ch>='A' && ch<='Z'){
@@ -292,6 +342,14 @@ int main() {
 		n = n/10;
 	}
 	cout<<even<<" "<<odd;
-
+    */
+    int n;
+    cin >> n;
+    vector<int> v(n);
+    for (int i = 0; i < n; ++i) {
+        cin >> v[i];
+    }
+    vector<int> result = getFrequencies(v);
+    cout << result[0] << " " << result[1] << endl;
     return 0;
 }
