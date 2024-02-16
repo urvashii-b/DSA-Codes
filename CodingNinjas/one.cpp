@@ -264,7 +264,7 @@ vector<int> countFrequency(int n, int x, vector<int> &nums){
     return ans;
 }
 
-// 
+// Highest / Lowest Frequency Elements
 vector<int> getFrequencies(vector<int>& v) {
     int m = v.size();
     unordered_map<int,int> freq;

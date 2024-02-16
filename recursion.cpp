@@ -110,7 +110,9 @@ int main()
     
     string s = "madam";
     cout<<isPalin(0,s);
-    */
+
     cout<<fib(5);
+    */
+    
     return 0;
 }

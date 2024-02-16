@@ -16,9 +16,10 @@ int countDigits(int n){
         cnt++;
         n=n/10;
     }
-    return n;
+    return cnt;
 
     // int cnt = (int)(log10(n)+1);
+    
     // string s = to_string(n);
     // return s.length();
 }
